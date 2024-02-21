@@ -1,0 +1,172 @@
+body {
+    background: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Elimina el margen por defecto del body */
+    min-height: 100vh; /* Asegura que el body cubra toda la altura de la pantalla */
+  }
+
+  .principal {
+    background-color:   #fff;/* Color de fondo */
+    padding: 4vw;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    max-width: 80%; /* Ancho máximo del div */
+    width: 65%; /* Ancho del div  */
+    height: 100%;
+    max-height: 100vh; /* Altura máxima del .principal */
+    text-align: center; /* Alinea el contenido al centro */
+}
+  .panel {
+    display:inline-flex;
+    flex:1 1;
+    margin:1vmin;
+    position:relative;
+  }
+
+  .panel1{
+    width: 80%;
+    display:inline-block;
+    flex:1 1;
+    margin:1vmin;
+    position:relative;
+  }
+
+label {
+    padding: 4px 8px; /* Espacio interno (arriba/abajo, izquierda/derecha) */
+    font-size: 14px; /* Tamaño de fuente */
+    height: 50%;
+    color: #000; /* Color de texto */
+    border-radius: 2px; /* Borde redondeado */
+    font-weight: bold; /* Peso de fuente (negrita) */
+    margin-right: 8px; /* Espacio entre etiqueta y elemento de entrada */
+}
+
+ #archivoXML,#inputImagen{
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde con color de borde gris */
+    border-radius: 4px; /* Borde redondeado */
+    font-size: 14px; /* Tamaño de fuente */
+    width: 80%; /* Ancho completo del contenedor padre */
+    height: 25px;
+    margin-right: 18px; /* Espacio entre etiqueta y elemento de entrada */
+}
+
+
+#cargarBoton,#limpiarBoton{
+    padding: 10px 20px; /* Espacio interno (arriba/abajo, izquierda/derecha) */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente (negrita) */
+    text-align: center;
+    text-decoration: none; /* Quitar subrayado enlaces */
+    border: none; /* Quitar borde */
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    margin-right: 18px; /* Espacio entre etiqueta y elemento de entrada */
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+}
+
+/* Cambio de color de fondo al pasar el mouse por encima */
+#cargarBoton:hover {
+    background-color: #0056b3; /* Nuevo color de fondo al pasar el mouse */
+}
+
+
+#imagenPrevisualizada {
+ 
+  width: 15%;
+  height: 15%;
+  display: none;
+}
+/* Estilos para el contenedor del PDF */
+#pdf-container {
+  width: 100%;
+  height: 500px;
+}
+
+/* Estilos para el visor de PDF */
+#pdf-viewer {
+  width: 100%;
+  height: 440px;
+  
+  display: block; /* Cambia a "block" para que el iframe sea visible por defecto */
+}
+
+/* Estilos para la animación de carga */
+
+.loader{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position:relative;
+  margin: 0 auto;
+}
+
+
+#loader:before, #loader:after{
+  content: "";
+  position: absolute;
+  top: 75px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 10px solid transparent;
+  border-top-color: #3498db;
+}
+
+#loader:before{
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+#loader:after{
+  border: 10px solid #ccc;
+}
+
+@keyframes spin{
+  0%{
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100%{
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .principal {
+      width: 90%; /* Cambia el ancho para pantallas más pequeñas */
+      height: 90%;
+  }
+  #pdf-viewer {
+    width: 100%;
+    height: 90%;
+    
+    display: block; /* Cambia a "block" para que el iframe sea visible por defecto */
+  }
+}
+
+@media (max-width: 1000px) {
+  .principal {
+      width: 90%; /* Cambia el ancho para pantallas más pequeñas */
+      height: 90%;
+  }
+  #pdf-viewer {
+    width: 100%;
+    height: 50%;
+    
+    display: block; /* Cambia a "block" para que el iframe sea visible por defecto */
+  }
+}
